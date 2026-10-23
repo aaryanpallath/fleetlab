@@ -1,0 +1,194 @@
+{
+  "_generated_at": "2026-10-23T17:58:54",
+  "test_baseline_every_job_completes_exactly_once": {
+    "bugs": {
+      "conn_only_detect": false,
+      "double_count": false,
+      "tight_timeout": false
+    },
+    "completions": 60,
+    "done": 60,
+    "duplicate_results": 0,
+    "jobs": 60,
+    "max_attempts": 1,
+    "node_deaths": 0,
+    "nodes_alive": 5,
+    "nodes_known": 5,
+    "passed": true,
+    "redispatches": 0
+  },
+  "test_defect_connection_only_detection_fixed": {
+    "bugs": {
+      "conn_only_detect": false,
+      "double_count": false,
+      "tight_timeout": false
+    },
+    "completions": 20,
+    "done": 20,
+    "duplicate_results": 0,
+    "finished": true,
+    "jobs": 20,
+    "max_attempts": 2,
+    "node_deaths": 1,
+    "nodes_alive": 4,
+    "nodes_known": 5,
+    "passed": true,
+    "redispatches": 1
+  },
+  "test_defect_connection_only_detection_is_caught[cluster0]": {
+    "bugs": {
+      "conn_only_detect": true,
+      "double_count": false,
+      "tight_timeout": false
+    },
+    "completions": 19,
+    "done": 19,
+    "duplicate_results": 0,
+    "finished": false,
+    "jobs": 20,
+    "max_attempts": 1,
+    "node_deaths": 0,
+    "nodes_alive": 5,
+    "nodes_known": 5,
+    "passed": true,
+    "redispatches": 0
+  },
+  "test_defect_double_count_fixed": {
+    "bugs": {
+      "conn_only_detect": false,
+      "double_count": false,
+      "tight_timeout": false
+    },
+    "completions": 30,
+    "done": 30,
+    "duplicate_results": 1,
+    "jobs": 30,
+    "max_attempts": 2,
+    "node_deaths": 1,
+    "nodes_alive": 5,
+    "nodes_known": 5,
+    "passed": true,
+    "redispatches": 1
+  },
+  "test_defect_double_count_is_caught[cluster0]": {
+    "bugs": {
+      "conn_only_detect": false,
+      "double_count": true,
+      "tight_timeout": false
+    },
+    "completions": 31,
+    "done": 30,
+    "duplicate_results": 1,
+    "jobs": 30,
+    "max_attempts": 2,
+    "node_deaths": 1,
+    "nodes_alive": 5,
+    "nodes_known": 5,
+    "passed": true,
+    "redispatches": 1
+  },
+  "test_defect_tight_timeout_fixed": {
+    "bugs": {
+      "conn_only_detect": false,
+      "double_count": false,
+      "tight_timeout": false
+    },
+    "completions": 25,
+    "done": 25,
+    "duplicate_results": 0,
+    "jobs": 25,
+    "max_attempts": 1,
+    "node_deaths": 0,
+    "nodes_alive": 5,
+    "nodes_known": 5,
+    "passed": true,
+    "redispatches": 0
+  },
+  "test_defect_tight_timeout_is_caught[cluster0]": {
+    "bugs": {
+      "conn_only_detect": false,
+      "double_count": false,
+      "tight_timeout": true
+    },
+    "completions": 25,
+    "done": 25,
+    "duplicate_results": 2,
+    "jobs": 25,
+    "max_attempts": 2,
+    "node_deaths": 10,
+    "nodes_alive": 5,
+    "nodes_known": 5,
+    "passed": true,
+    "redispatches": 3
+  },
+  "test_killed_node_releases_its_job_immediately_and_rejoins": {
+    "bugs": {
+      "conn_only_detect": false,
+      "double_count": false,
+      "tight_timeout": false
+    },
+    "completions": 30,
+    "done": 30,
+    "duplicate_results": 0,
+    "jobs": 30,
+    "max_attempts": 2,
+    "node_deaths": 1,
+    "nodes_alive": 4,
+    "nodes_known": 5,
+    "passed": true,
+    "redispatches": 1,
+    "requeue_s": 0.19
+  },
+  "test_network_delay_and_jitter_cause_no_false_failures": {
+    "bugs": {
+      "conn_only_detect": false,
+      "double_count": false,
+      "tight_timeout": false
+    },
+    "completions": 40,
+    "done": 40,
+    "duplicate_results": 0,
+    "jobs": 40,
+    "max_attempts": 1,
+    "node_deaths": 0,
+    "nodes_alive": 5,
+    "nodes_known": 5,
+    "passed": true,
+    "redispatches": 0
+  },
+  "test_packet_loss_is_absorbed": {
+    "bugs": {
+      "conn_only_detect": false,
+      "double_count": false,
+      "tight_timeout": false
+    },
+    "completions": 40,
+    "done": 40,
+    "duplicate_results": 0,
+    "jobs": 40,
+    "max_attempts": 1,
+    "node_deaths": 0,
+    "nodes_alive": 5,
+    "nodes_known": 5,
+    "passed": true,
+    "redispatches": 0
+  },
+  "test_silent_partition_is_detected_and_work_moves": {
+    "bugs": {
+      "conn_only_detect": false,
+      "double_count": false,
+      "tight_timeout": false
+    },
+    "completions": 30,
+    "detect_s": 4.4,
+    "done": 30,
+    "duplicate_results": 0,
+    "jobs": 30,
+    "max_attempts": 2,
+    "node_deaths": 1,
+    "nodes_alive": 4,
+    "nodes_known": 5,
+    "passed": true,
+    "redispatches": 1
+  }
+}

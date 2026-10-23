@@ -1,0 +1,23 @@
+name: CI
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+      - run: uv sync
+      - name: Lint
+        run: uv run ruff check src tests sut
+      - name: Unit tests (no containers)
+        run: uv run pytest -q tests/test_topology.py
+      - name: System scenarios in on-demand container environments
+        run: uv run pytest -q -m docker
+      - name: Scaling check (1 + 20 nodes)
+        run: uv run fleetlab bench topologies/inspect.yaml --sizes 20 --repeats 1 --out /tmp/bench.json
+      - name: No environments left behind
+        if: always()
+        run: test "$(docker ps -aq --filter label=fleetlab.run | wc -l)" -eq 0

@@ -1,0 +1,11 @@
+# Central coordinator + inspection nodes (the system under test in sut/).
+name: inspect-cluster
+image: fleetlab-sut:dev
+services:
+  coordinator:
+    command: [python, cluster.py, coordinator]
+    publish: [8080]
+  node:
+    replicas: 5
+    command: [python, cluster.py, node]
+    env: {COORDINATOR: coordinator}

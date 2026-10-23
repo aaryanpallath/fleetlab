@@ -1,0 +1,26 @@
+[project]
+name = "fleetlab"
+version = "0.1.0"
+description = "On-demand containerized test environments for distributed systems, with fault injection"
+requires-python = ">=3.11"
+dependencies = ["pyyaml>=6.0"]
+
+[project.scripts]
+fleetlab = "fleetlab.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8.3", "ruff>=0.7"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fleetlab"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["docker: starts real containers (needs a Docker daemon)"]
+
+[tool.ruff]
+line-length = 120
